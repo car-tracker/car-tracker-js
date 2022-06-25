@@ -26,7 +26,7 @@ var marker = L.marker([51.12820816040039, 71.43041229248047]).addTo(map);
 //     .addTo(map);
 // });
 
-var data = [
+let data = [
   {
     carID: 125,
     startPoint: {
@@ -62,6 +62,12 @@ var data = [
   },
 ];
 
+/*vechile*/
+/*ОТОБРАЗИТЬ ДАТА В КАРТОЧКЕ ПОД ВЕКАЙЛ ЛИСТОМ */
+let vechileShowList = document.querySelector(".vechile_info");
+vechileShowList.onclick = function () {
+ console.log(data)
+};
 
 /*Immitation car routes*/
 function createRoute(data) {
@@ -73,7 +79,6 @@ function createRoute(data) {
         L.latLng(item.startPoint.lat, item.startPoint.lng),
         L.latLng(item.endPoint.lat, item.endPoint.lng),
       ],
-   
     }).addTo(map);
   });
 }
@@ -111,4 +116,3 @@ setTimeout(() => {
 //TODO: УБРАТЬ ПРАВУЮ ИНФОРМАТИВНУЮ КАРТУ
 //TODO: ПРИ РИСОВКЕ МАРШРУТА КАРТА ДЕРГАЕТСЯ И ПЕРЕДВИГАЕТСЯ НА КАЖДЫЙ МАРШРУТ, НАДО СДЕЛАТЬ ТАК ЧТОБЫ КАРТА НЕ МЕНЯЛА ПОЗИЦИЮ ПРИ ПЕРВОМ ВХОДЕ/БЕЗДЕЙСТВИИ
 //НА МАРШРУТ ПОВЕСИТЬ ПОПАП С ДАННЫМИ О МАШИНЕ И ЮЗЕРЕ ПРИ КЛИКАНИИ
-

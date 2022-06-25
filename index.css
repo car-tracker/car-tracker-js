@@ -51,7 +51,7 @@ body {
   margin-right: 5px;
 }
 .logo_content .logo .logo_name {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
 }
 .sidebar #btn {
@@ -125,4 +125,9 @@ body {
 }
 .sidebar.active .logout #log_out {
   left: 88%;
+}
+
+
+.item__info{
+  color:#fff;
 }
