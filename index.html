@@ -18,32 +18,58 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css"
     />
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      #map {
-        width: 100%;
-        height: 100vh;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div id="map" style="width: 100%; height: 100vh"></div>
-    <form onsubmit="submitEvent(event)">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-      </div>
+    <div id="map"></div>
 
-      <div>
-        <button onclick="submitEvent()">Submit</button>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          <i class="bx bx-navigation"></i>
+          <div class="logo_name">Car Track</div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
       </div>
-    </form>
+      <ul class="nav_list">
+        <li>
+          <a href="#">
+            <i class="bx bx-flag"></i>
+            <span class="links_name">Current Position</span>
+          </a>
+          <!--<span class="links name">Dashboard</span>-->
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-map-alt"></i>
+            <span class="links_name">Vehicle List</span>
+          </a>
+          <!--<span class="links name">Dashboard</span>-->
+        </li>
+      </ul>
+      <div class="logout">
+        <i class="bx bx-log-out" id="log_out"></i>
+      </div>
+    </div>
+
+    <script>
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+
+      btn.onclick = function () {
+        sidebar.classList.toggle("active");
+      };
+    </script>
+
+    <!-- HEADER -->
+
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
     <script

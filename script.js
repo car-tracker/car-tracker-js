@@ -62,16 +62,18 @@ var data = [
   },
 ];
 
+
 /*Immitation car routes*/
 function createRoute(data) {
   //TODO: ДАННЫЕ ОТОБРАЗИТЬ НА САЙДБАРЕ
   data.forEach(function (item, index) {
-    L.marker([item.startPoint.lat, item.startPoint.lng]);
+    L.marker([item.startPoint.lat, item.startPoint.lng]).addTo(map);
     L.Routing.control({
       waypoints: [
         L.latLng(item.startPoint.lat, item.startPoint.lng),
         L.latLng(item.endPoint.lat, item.endPoint.lng),
       ],
+   
     }).addTo(map);
   });
 }
@@ -105,7 +107,8 @@ setTimeout(() => {
 }, 10000);
 
 //TODO:ДОБАВИТЬ ХЕДЕР И ФУНКЦИЮ ПОИСКА МАРШРУТА
-//TODO:ДОБАВИТЬ САЙДБАР И В ВЕКАЙЛ ЛИСТЕ ОТОБРАЗИТЬ В КАРТОЧКАХ ВСЕ ДАННЫЕ НА СЕРВЕРЕ О МАШИНЕ ЮЗЕРЕ КМ ВРЕМЯ ДАТА И ТД ТП ЭТИ ЮЗЕРЫ ТАК ЖЕ ДОЛЖНЫ ПОЯВЛЯТЬСЯ НА КРАТЕ (МАРШРУТ)
+//TODO:В ВЕКАЙЛ ЛИСТЕ ОТОБРАЗИТЬ В КАРТОЧКАХ ВСЕ ДАННЫЕ НА СЕРВЕРЕ О МАШИНЕ ЮЗЕРЕ КМ ВРЕМЯ ДАТА И ТД ТП ЭТИ ЮЗЕРЫ ТАК ЖЕ ДОЛЖНЫ ПОЯВЛЯТЬСЯ НА КAРТЕ (МАРШРУТ)
 //TODO: УБРАТЬ ПРАВУЮ ИНФОРМАТИВНУЮ КАРТУ
 //TODO: ПРИ РИСОВКЕ МАРШРУТА КАРТА ДЕРГАЕТСЯ И ПЕРЕДВИГАЕТСЯ НА КАЖДЫЙ МАРШРУТ, НАДО СДЕЛАТЬ ТАК ЧТОБЫ КАРТА НЕ МЕНЯЛА ПОЗИЦИЮ ПРИ ПЕРВОМ ВХОДЕ/БЕЗДЕЙСТВИИ
 //НА МАРШРУТ ПОВЕСИТЬ ПОПАП С ДАННЫМИ О МАШИНЕ И ЮЗЕРЕ ПРИ КЛИКАНИИ
+
