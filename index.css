@@ -26,15 +26,16 @@ body {
   left: 0;
   height: 100%;
   width: 78px;
-  background: #292d3a;
+  background: #fff;
   padding: 6px 14px;
   transition: all 0.5s ease;
-}
+}  
 .sidebar.active {
-  width: 240px;
+  width: 500px;
+  overflow: auto;
 }
 .sidebar .logo_content .logo {
-  color: #fff;
+  color: #14191E;
   display: flex;
   height: 50px;
   width: 100%;
@@ -56,7 +57,7 @@ body {
 }
 .sidebar #btn {
   position: absolute;
-  color: #fff;
+  color: #1D9BF0;
   left: 50%;
   top: 6px;
   font-size: 20px;
@@ -91,7 +92,7 @@ body {
   pointer-events: auto;
 }
 .sidebar ul li a {
-  color: #fff;
+  color:#14191E;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -100,18 +101,39 @@ body {
   white-space: nowrap;
 }
 .sidebar ul li a:hover {
-  color: #292d3a;
-  background: #fff;
+  
+  background: #e9ecef;
 }
 
-.sidebar ul li a i {
+.sidebar ul li i {
   height: 50px;
   min-width: 50px;
   border-radius: 12px;
   line-height: 50px;
   text-align: center;
 }
-.logout #log_out {
+.sidebar ul li .bx-search{
+  position: absolute;
+  z-index: 99;
+  color: #14191E;
+  font-size: 22px;
+}
+.sidebar ul li input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left:0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border:none;
+  background:#fff;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  padding-left: 50px;
+  font-size: 18px;
+  color: #14191E;
+}
+/* .logout #log_out {
   position: absolute;
   left: 50%;
   bottom: 5px;
@@ -122,12 +144,44 @@ body {
   border-radius: 12px;
   color: #fff;
   text-align: center;
-}
-.sidebar.active .logout #log_out {
+} */
+/* .sidebar.active .logout #log_out {
   left: 88%;
-}
-
-
+} */
 .item__info{
   color:#fff;
 }
+.block {
+  overflow: hidden;
+
+}
+.block {
+  display: grid;
+
+}
+.card {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 1rem 0rem;
+  padding: 1rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: space-between;
+  border-style: solid;
+  border-color: #1D9BF0;
+}
+.progress-info{
+	color: #fff;
+  height: 25px;
+  width: 110px;
+  text-align: center;
+	border-radius: 10px;
+	background-color: #75A85E;
+}
+
+
+

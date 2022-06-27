@@ -37,6 +37,7 @@ let data = [
       lat: 51.12710984444874,
       lng: 71.42223233385684,
     },
+    progress:  'In progress',
   },
   {
     carID: 126,
@@ -48,6 +49,7 @@ let data = [
       lat: 51.13077612181946,
       lng: 71.4296181646681,
     },
+    progress:  'Completed'
   },
   {
     carID: 127,
@@ -59,6 +61,19 @@ let data = [
       lat: 51.124315017315105,
       lng: 71.43652183297749,
     },
+    progress:  'In progress'
+  },
+  {
+    carID: 128,
+    startPoint: {
+      lat: 51.127218173092295,
+      lng: 71.43342665985487,
+    },
+    endPoint: {
+      lat: 51.124315017315100,
+      lng: 71.43652183297749,
+    },
+    progress:  'In progress'
   },
 ];
 
@@ -67,7 +82,37 @@ let data = [
 let vechileShowList = document.querySelector(".vechile_info");
 vechileShowList.onclick = function () {
   console.log(data);
+  var carsInfo=data.map(function(item){
+    return{
+      carID:item.carID,
+      startPoint: item.startPoint.lat,
+      endPoint: item.endPoint.lat,
+      progess: item.progress
+    };
+  });
+  data.forEach(cars=>{
+    var div=document.querySelector("#cars")
+    div.innerHTML=div.innerHTML+`
+    <div class="row">
+    <div class="block">
+    <div class="cards">
+    <div class="card">
+    <div class="card-info">
+    <p style="color: #6c757d;">Car ID</p>
+       <h5 class="car-id">${cars.carID}</h5>
+       <p style="color: #6c757d;">Location</p>
+       <h5>${cars.startPoint.lat}, ${cars.endPoint.lat}</h5>
+       <div class="progress"></div>
+       </div> 
+       <p class="progress-info">${cars.progress}</p>
+       </div>
+       </div>
+       </div>
+       </div>
+    `
+     })
 };
+
 
 var startIcon = L.icon({
   iconUrl: "img/red.png",
@@ -152,6 +197,8 @@ function helperFilter(value, carID) {
 setTimeout(() => {
   findRoute(125, data);
 }, 10000);
+
+//
 
 //TODO:ДОБАВИТЬ ХЕДЕР И ФУНКЦИЮ ПОИСКА МАРШРУТА
 //TODO:В ВЕКАЙЛ ЛИСТЕ ОТОБРАЗИТЬ В КАРТОЧКАХ ВСЕ ДАННЫЕ НА СЕРВЕРЕ О МАШИНЕ ЮЗЕРЕ КМ ВРЕМЯ ДАТА И ТД ТП ЭТИ ЮЗЕРЫ ТАК ЖЕ ДОЛЖНЫ ПОЯВЛЯТЬСЯ НА КAРТЕ (МАРШРУТ)
