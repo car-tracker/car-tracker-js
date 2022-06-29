@@ -28,9 +28,6 @@
   <body>
     <div id="map"></div>
 
-
-    
-
     <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="logo_content">
@@ -42,8 +39,10 @@
       </div>
       <ul class="nav_list">
         <li>
+          <form action="#">
          <i class="bx bx-search"></i>
-         <input type="text" placeholder="Search..."/>
+         <input type="text" id = "search" placeholder="Search..."/>
+        </form>
         </li>
 
         <li>
@@ -51,12 +50,8 @@
             <i class="bx bx-map-alt"></i>
             <span class="links_name">Vehicle List</span>
           </a>
-          <!--<span class="links name">Dashboard</span>-->
         </li>
       </ul>
-      <!-- <div class="logout">
-        <i class="bx bx-log-out" id="log_out"></i>
-      </div> -->
           <div id="cars"></div>
       </div>
 </div>
