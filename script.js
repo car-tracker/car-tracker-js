@@ -55,7 +55,6 @@ let data = [
   },
 ];
 
-
 let vechileShowList = document.querySelector(".vechile_info");
 vechileShowList.onclick = function () {
   data.map(function (item) {
@@ -138,7 +137,7 @@ function createRoute(data) {
 //имитация выгрузка маршрутов из сервера
 setTimeout(() => {
   createRoute(data);
-}, 3000);
+}, 2000);
 
 let search = document.querySelector("#search");
 
@@ -153,12 +152,14 @@ search.addEventListener("keyup", (e) => {
 function findRoute(carID, data) {
   data.map((car) => {
     if (car.carID === Number(carID)) {
-      L.marker([car.startPoint.lat, car.startPoint.lng]);
       L.Routing.control({
         waypoints: [
           L.latLng(car.startPoint.lat, car.startPoint.lng),
           L.latLng(car.endPoint.lat, car.endPoint.lng),
         ],
+        createMarker: function () {
+          return null;
+        },
       }).addTo(map);
     }
   });
