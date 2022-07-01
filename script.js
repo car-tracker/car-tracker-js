@@ -1,4 +1,3 @@
-//ДОБАВЛЕНИЕ КАРТЫ НА ГЛАВНУЮ СТРАНИЦУ
 var map = L.map("map").setView([51.12820816040039, 71.43041229248047], 90);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "OSM",
@@ -164,4 +163,3 @@ function findRoute(carID, data) {
     }
   });
 }
-//НА МАРШРУТ ПОВЕСИТЬ ПОПАП С ДАННЫМИ О МАШИНЕ И ЮЗЕРЕ ПРИ КЛИКАНИИ
